@@ -2,6 +2,12 @@
     display: flex;
 }
 
+@media (max-width: 450px) {
+    .form {
+        flex-wrap: wrap;
+    }
+}
+
 .form__input {
     flex-grow: 1;
     margin: 20px;
@@ -11,17 +17,30 @@
     font-family: "Poppins", sans-serif;
 }
 
+@media (max-width: 450px) {
+    .form__input {
+        margin-right: 20px;
+    }
+}
+
 .form__button {
     padding: 8px;
     margin: 20px;
     flex-shrink: 0;
-    flex-basis: 120px;
+    flex-basis: 130px;
     border: none;
     color: white;
     background-color: #007382;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .form__button {
+        flex-grow: 1;
+        margin-top: 0;
+    }
 }
 
 .form__button:hover {
