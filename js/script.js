@@ -17,11 +17,19 @@
             listHtml +=
                 `<li ${task.done ? 'class="list__item--done"' : ""}>
             ${task.content}
+            <button class="js-removeButton">🗑</button>
             </li>`
         };
 
         document.querySelector(".js-tasksList").innerHTML = listHtml;
 
+        const removeButtons = document.querySelectorAll(".js-removeButton");
+
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(index)
+            })
+        });
     };
 
     const addNewTask = (newTaskContent) => {
@@ -30,6 +38,12 @@
         render();
     };
 
+    const removeTask = (index) => {
+        tasks.splice(index, 1);
+        render();
+    };
+
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -37,21 +51,20 @@
 
         if (newTaskContent === "") {
             return;
-        }
+        };
 
         addNewTask(newTaskContent);
     };
 
 
     const init = () => {
-
         render();
 
         const form = document.querySelector(".js-form");
 
         form.addEventListener("submit", onFormSubmit)
 
-    };
+     };
 
     init();
 }
