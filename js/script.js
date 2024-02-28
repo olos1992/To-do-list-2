@@ -24,6 +24,10 @@
 
         document.querySelector(".js-tasksList").innerHTML = listHtml;
 
+        bindEvents();
+    };
+
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-removeButton");
 
         removeButtons.forEach((removeButton, index) => {
@@ -39,7 +43,7 @@
                 toggleTaskDone(index);
             })
         });
-    };
+    }
 
     const addNewTask = (newTaskContent) => {
         tasks.push({ content: newTaskContent });
