@@ -16,6 +16,7 @@
         for (task of tasks) {
             listHtml +=
                 `<li ${task.done ? 'class="list__item--done"' : ""}>
+            <button class="js-doneButton">✔</button>
             ${task.content}
             <button class="js-removeButton">🗑</button>
             </li>`
@@ -27,7 +28,15 @@
 
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
-                removeTask(index)
+                removeTask(index);
+            })
+        });
+
+        const doneButtons = document.querySelectorAll(".js-doneButton");
+
+        doneButtons.forEach((doneButton, index) => {
+            doneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
             })
         });
     };
@@ -40,9 +49,15 @@
 
     const removeTask = (index) => {
         tasks.splice(index, 1);
+
         render();
     };
 
+    const toggleTaskDone = (index) => {
+        tasks[index].done = !tasks[index].done;
+        
+        render();
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -63,8 +78,7 @@
         const form = document.querySelector(".js-form");
 
         form.addEventListener("submit", onFormSubmit)
-
-     };
+    };
 
     init();
 }
