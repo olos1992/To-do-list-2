@@ -7,21 +7,27 @@
 .list__item {
     display: grid;
     grid-template-columns: 26px 1fr 26px;
+    grid-template-rows: auto;
+    word-wrap: break-word;
+    word-break: break-all;
     padding: 10px;
     border-bottom: 2px solid #e4e4e4;
+}
+
+.list__itemContent {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .list__itemContent--done {
     text-decoration: line-through;
 }
 
-.list__itemContent {
-    margin-left: 15px;
-}
-
 .list__button {
+    height: 25px;
     border: none;
     color: white;
+    align-self: center;
 }
 
 .list__button--done {

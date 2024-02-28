@@ -18,6 +18,7 @@
         document.querySelector(".js-tasksList").innerHTML = listHtml;
 
         bindEvents();
+
     };
 
     const bindEvents = () => {
@@ -40,7 +41,7 @@
 
     const addNewTask = (newTaskContent) => {
         tasks.push({ content: newTaskContent });
-        
+
         render();
     };
 
@@ -52,20 +53,25 @@
 
     const toggleTaskDone = (index) => {
         tasks[index].done = !tasks[index].done;
-        
+
         render();
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
 
+        const newTaskInput = document.querySelector(".js-newTask");
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
 
         if (newTaskContent === "") {
+            newTaskInput.focus();
             return;
         };
 
         addNewTask(newTaskContent);
+
+        newTaskInput.value = "";
+        newTaskInput.focus();
     };
 
 
