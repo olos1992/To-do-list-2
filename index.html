@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/section.css">
+    <link rel="stylesheet" href="css/container.css">
     <link rel="stylesheet" href="css/list.css">
+    <link rel="stylesheet" href="css/form.css">
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
 
-    <form class="js-form">
-        <input class="js-newTask">
+    <section class="section">
+        <header>
+            <h1 class="section__header">Lista zadań</h1>
+        </header>
 
-        <button>Dodaj zadanie</button>
+        <div class="container">
+            <h2 class="container__header">Dodaj nowe zadanie</h2>
+            <form class="form js-form">
+                <input class="form__input js-newTask" placeholder="Co jest do zrobienia?" autofocus>
+                <button class="form__button">Dodaj zadanie</button>
+            </form>
+        </div>
 
-        <ul class="js-tasksList">
-        </ul>
-    </form>
-    
+        <div class="container">
+            <h2 class="container__header">Lista zadań</h2>
+            <ul class="list js-tasksList">
+            </ul>
+        </div>
+
+    </section>
+
 </body>
+
 </html>

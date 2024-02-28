@@ -1,24 +1,17 @@
 {
-    const tasks = [
-        {
-            content: "Zadanie 1",
-            done: true,
-        },
-        {
-            content: "Zadanie 2",
-            done: false,
-        },
-    ];
+    const tasks = [];
 
     const render = () => {
         let listHtml = "";
 
         for (task of tasks) {
             listHtml +=
-                `<li ${task.done ? 'class="list__item--done"' : ""}>
-            <button class="js-doneButton">✔</button>
-            ${task.content}
-            <button class="js-removeButton">🗑</button>
+                `<li class="list__item">
+            <button class="list__button list__button--done js-doneButton">
+            ${task.done ? "✔" : ""}
+            </button>
+            <span class="list__itemContent ${task.done ? "list__itemContent--done" : ""}">${task.content}</span>
+            <button class="list__button list__button--remove js-removeButton">🗑</button>
             </li>`
         };
 
@@ -47,7 +40,7 @@
 
     const addNewTask = (newTaskContent) => {
         tasks.push({ content: newTaskContent });
-
+        
         render();
     };
 

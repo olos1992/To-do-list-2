@@ -1,0 +1,29 @@
+.form {
+    display: flex;
+}
+
+.form__input {
+    flex-grow: 1;
+    margin: 20px;
+    margin-right: 0;
+    padding: 8px;
+    border: 2px solid #e4e4e4;
+    font-family: "Poppins", sans-serif;
+}
+
+.form__button {
+    padding: 8px;
+    margin: 20px;
+    flex-shrink: 0;
+    flex-basis: 120px;
+    border: none;
+    color: white;
+    background-color: #007382;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.form__button:hover {
+    background-color: #007382c9;
+}
