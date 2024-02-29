@@ -28,6 +28,7 @@
     border: none;
     color: white;
     align-self: center;
+    cursor: pointer;
 }
 
 .list__button--done {
