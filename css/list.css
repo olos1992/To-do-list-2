@@ -31,6 +31,10 @@
     cursor: pointer;
 }
 
+.list__button:active {
+    border: 2px solid black;
+}
+
 .list__button--done {
     background-color: #1a7b1e;
 }
