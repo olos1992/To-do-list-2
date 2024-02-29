@@ -49,3 +49,7 @@
 .form__button:hover {
     background-color: #007382c9;
 }
+
+.form__button:active {
+    border: 2px solid black;
+}
