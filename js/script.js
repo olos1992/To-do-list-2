@@ -5,17 +5,19 @@
         let listHtml = "";
 
         for (task of tasks) {
-            listHtml +=`
-            <li class="list__item">
-                <button class="list__button list__button--done js-doneButton">
-                    ${task.done ? "✔" : ""}
-                </button>
-                <span class="list__itemContent ${task.done ? "list__itemContent--done" : ""}">$
-                {task.content}
-                </span>
-                <button class="list__button list__button--remove js-removeButton">🗑</button>
-            </li>
-            `};
+            listHtml +=
+                `<li class="list__item">
+                    <button class="list__button list__button--done js-doneButton">
+                        ${task.done ? "✔" : ""}
+                    </button>
+                    <span class="list__itemContent ${task.done ? "list__itemContent--done" : ""}">
+                    ${task.content}
+                    </span>
+                    <button class="list__button list__button--remove js-removeButton">
+                    🗑
+                    </button>
+                </li>`
+        };
 
         document.querySelector(".js-tasksList").innerHTML = listHtml;
 
