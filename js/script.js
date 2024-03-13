@@ -1,7 +1,7 @@
 {
     let tasks = [];
 
-    const render = () => {
+    const renderTasks = () => {
         let listHtml = "";
 
         for (task of tasks) {
@@ -20,11 +20,22 @@
         };
 
         document.querySelector(".js-tasksList").innerHTML = listHtml;
-
-        bindEvents();
     };
 
-    const bindEvents = () => {
+    const renderButtons = () => {
+
+    };
+
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
+
+        bindRemoveEvents();
+        bindToggleDoneEvents();
+    };
+
+    const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-removeButton");
 
         removeButtons.forEach((removeButton, index) => {
@@ -32,7 +43,9 @@
                 removeTask(index);
             })
         });
+    };
 
+    const bindToggleDoneEvents = () => {
         const doneButtons = document.querySelectorAll(".js-doneButton");
 
         doneButtons.forEach((doneButton, index) => {
@@ -53,7 +66,7 @@
     const removeTask = (index) => {
         tasks = [
             ...tasks.slice(0, index),
-            ...tasks.slice(index +1)
+            ...tasks.slice(index + 1)
         ];
         render();
     };
@@ -61,15 +74,10 @@
     const toggleTaskDone = (index) => {
         tasks = [
             ...tasks.slice(0, index),
-            {...tasks[index], done: !tasks[index].done},
+            { ...tasks[index], done: !tasks[index].done },
             ...tasks.slice(index + 1),
         ];
         render();
-    };
-
-    const autofocus = (newTaskInput) => {
-        newTaskInput.value = "";
-        newTaskInput.focus();
     };
 
     const onFormSubmit = (event) => {
@@ -86,6 +94,11 @@
         addNewTask(newTaskContent);
 
         autofocus(newTaskInput);
+    };
+
+    const autofocus = (newTaskInput) => {
+        newTaskInput.value = "";
+        newTaskInput.focus();
     };
 
     const init = () => {
