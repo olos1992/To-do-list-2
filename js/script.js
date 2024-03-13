@@ -1,5 +1,6 @@
 {
     let tasks = [];
+    let hideDoneTasks = false;
 
     const renderTasks = () => {
         let listHtml = "";
@@ -23,7 +24,17 @@
     };
 
     const renderButtons = () => {
+        const listContent = document.querySelector(".js-tasksList").innerHTML
+        
+        let listButtons = "";
 
+        listButtons =
+        `
+        <button class = "container__buttons ${listContent === "" ? "container__buttons--hidden" : ""}">Ukończ wszystkie zadania</button>
+        <button class = "container__buttons ${listContent === "" ? "container__buttons--hidden" : ""}">Ukryj ukończone zadania</button>
+        `
+
+        document.querySelector(".js-buttonsPlace") .innerHTML = listButtons;
     };
 
 
@@ -33,6 +44,7 @@
 
         bindRemoveEvents();
         bindToggleDoneEvents();
+        // bindButtonsEvents();
     };
 
     const bindRemoveEvents = () => {
@@ -54,6 +66,10 @@
             })
         });
     };
+
+    // const bindButtonsEvents = () => {
+
+    // };
 
     const addNewTask = (newTaskContent) => {
         tasks = [

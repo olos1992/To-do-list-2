@@ -3,10 +3,27 @@
     margin-top: 10px;
 }
 
-.container__header {
+.container__box {
+    display: flex;
     border-bottom: 2px solid #e4e4e4;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__header {
     padding: 20px;
     font-weight: bold;
     font-size: 20px;
     margin: 0;
+}
+
+.container__buttons {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.container__buttons--hidden {
+    display: none;
 }
