@@ -67,6 +67,11 @@
         render();
     };
 
+    const autofocus = (newTaskInput) => {
+        newTaskInput.value = "";
+        newTaskInput.focus();
+    };
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -80,8 +85,7 @@
 
         addNewTask(newTaskContent);
 
-        newTaskInput.value = "";
-        newTaskInput.focus();
+        autofocus(newTaskInput);
     };
 
     const init = () => {
