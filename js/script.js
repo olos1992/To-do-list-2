@@ -119,7 +119,6 @@
 
     const toggleAllTaskDone = () => {
         tasks.map(task => task.done = true)
-        console.log(tasks);
         render();
     };
 
