@@ -28,14 +28,14 @@
 
         let listButtons = "";
 
-        const isEveryTaskDone = tasks.every(({done}) => !done);
-
         if (listContent !== "") {
             listButtons =
-        `
-        <button class = "container__buttons js-hideDoneButton" ${isEveryTaskDone ? "disabled" : ""}>${hideDoneTasks === false ? "Ukryj ukończone" : "Pokaż ukończone"}</button>
-        <button class = "container__buttons js-doneAllButton">Ukończ wszystkie</button>
-        `
+                `<button class = "container__buttons js-hideDoneButton" ${tasks.every(({ done }) => !done) ? "disabled" : ""}>
+                ${hideDoneTasks === false ? "Ukryj ukończone" : "Pokaż ukończone"}
+                </button>
+                <button class = "container__buttons js-doneAllButton">
+                Ukończ wszystkie
+                </button>`
         };
 
         document.querySelector(".js-buttonsPlace").innerHTML = listButtons;
