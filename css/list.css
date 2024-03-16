@@ -14,6 +14,10 @@
     border-bottom: 2px solid #e4e4e4;
 }
 
+.list__item--hidden {
+    display: none;
+}
+
 .list__itemContent {
     margin-left: 15px;
     margin-right: 15px;
