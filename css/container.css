@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+@media (max-width: 500px) {
+    .container__box {
+        flex-wrap: wrap;
+    }
+}
+
 .container__header {
     padding: 20px;
     font-weight: bold;
@@ -17,11 +23,26 @@
     margin: 0;
 }
 
+@media (max-width: 500px) {
+    .container__header {
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+
 .container__buttons {
     border: none;
     background: none;
     cursor: pointer;
     padding: 20px;
+    font-size: 17px;
+    color: #007382;
+    font-family: "Poppins", sans-serif;
+    transition: 0.5s;
+}
+
+.container__buttons:hover {
+    color: #00738294;
 }
 
 .container__buttons--hidden {

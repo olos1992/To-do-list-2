@@ -38,6 +38,7 @@
     font-weight: 300;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.4s;
 }
 
 @media (max-width: 500px) {
@@ -50,6 +51,7 @@
 
 .form__button:hover {
     background-color: #007382c9;
+    transform: scale(1.1);
 }
 
 .form__button:active {

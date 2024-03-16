@@ -34,6 +34,7 @@
     color: white;
     align-self: center;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .list__button:active {
@@ -44,6 +45,14 @@
     background-color: #1a7b1e;
 }
 
+.list__button--done:hover {
+    background-color: #1a7b1dbd;
+}
+
 .list__button--remove {
     background-color: #ec293a;
+}
+
+.list__button--remove:hover {
+    background-color: #ec2939cb;
 }
