@@ -33,7 +33,7 @@
         if (listContent !== "") {
             listButtons =
         `
-        <button class = "container__buttons js-hideDoneButton" ${isEveryTaskDone ? "disabled = true" : ""}>${hideDoneTasks === false ? "Ukryj ukończone" : "Pokaż ukończone"}</button>
+        <button class = "container__buttons js-hideDoneButton" ${isEveryTaskDone ? "disabled" : ""}>${hideDoneTasks === false ? "Ukryj ukończone" : "Pokaż ukończone"}</button>
         <button class = "container__buttons js-doneAllButton">Ukończ wszystkie</button>
         `
         };
