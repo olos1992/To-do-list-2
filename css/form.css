@@ -2,7 +2,7 @@
     display: flex;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 736px) {
     .form {
         flex-wrap: wrap;
     }
@@ -18,11 +18,12 @@
     font-size: 16px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 736px) {
     .form__input {
         margin-right: 20px;
         margin-bottom: 10px;
         min-width: 0;
+        flex-basis: 100%;
     }
 }
 
@@ -41,11 +42,10 @@
     transition: 0.4s;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 736px) {
     .form__button {
         flex-grow: 1;
         margin-top: 0;
-
     }
 }
 

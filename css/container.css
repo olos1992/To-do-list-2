@@ -10,9 +10,10 @@
     align-items: center;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 736px) {
     .container__box {
         flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
@@ -23,11 +24,21 @@
     margin: 0;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 736px) {
     .container__header {
-        flex-grow: 1;
-        text-align: center;
+        flex-basis: 100%;
     }
+}
+
+.container__buttonsPlace {
+    display: flex;
+}
+
+@media (max-width: 736px) {
+    .container__buttonsPlace {
+        flex-wrap: wrap;
+        justify-content: center;
+        }
 }
 
 .container__buttons {
@@ -39,6 +50,13 @@
     color: #007382;
     font-family: "Poppins", sans-serif;
     transition: 0.5s;
+}
+
+@media (max-width: 736px) {
+    .container__buttons {
+        flex-basis: 100%;
+        padding: 10px;
+    }
 }
 
 .container__buttons:hover {
