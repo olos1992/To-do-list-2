@@ -6,8 +6,8 @@
         let listHtml = "";
 
         for (task of tasks) {
-            listHtml +=
-                `<li class="list__item js-listItem ${hideDoneTasks && task.done ? "list__item--hidden" : ""} ">
+            listHtml += `
+                    <li class="list__item js-listItem ${hideDoneTasks && task.done ? "list__item--hidden" : ""} ">
                     <button class="list__button list__button--done js-doneButton">
                         ${task.done ? "✔" : ""}
                     </button>
@@ -17,8 +17,8 @@
                     <button class="list__button list__button--remove js-removeButton">
                     🗑
                     </button>
-                </li>`
-        };
+                </li>
+        `};
 
         document.querySelector(".js-tasksList").innerHTML = listHtml;
     };
@@ -29,14 +29,14 @@
         let listButtons = "";
 
         if (listContent !== "") {
-            listButtons =
-                `<button class = "container__buttons js-hideDoneButton" ${tasks.every(({ done }) => !done) ? "disabled" : ""}>
+            listButtons = `
+                <button class = "container__buttons js-hideDoneButton" ${tasks.every(({ done }) => !done) ? "disabled" : ""}>
                 ${hideDoneTasks === false ? "Ukryj ukończone" : "Pokaż ukończone"}
                 </button>
                 <button class = "container__buttons js-doneAllButton">
                 Ukończ wszystkie
-                </button>`
-        };
+                </button>
+        `};
 
         document.querySelector(".js-buttonsPlace").innerHTML = listButtons;
     };
